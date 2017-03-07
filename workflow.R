@@ -4,11 +4,12 @@
 MEMGB <- 2  #memory allocated for JVM
 NUM_FOLDS <- 10 #number of folds
 MIN_COVER <- 500 #min term coverage on GO ontology
+
 GENE_FILE <- "00-data/pathwayList"  #path to the row ontology file (kegg)
 LOCATION_FILE <- "00-data/columnOntology" #path to the column ontology file
 MATRIX <- "00-data/discMatrix.csv"  #original gene expression matrix
 GO_OBO <- "00-data/go-basic.obo"  #GO in obo format
-FBGN2GO <- "00-data/gene_association.fb"  #mapping FBgn to GO IDs
+FBGN2GO <- "00-data/gene_association.fb"  #mapping FBgn to GO ID
 
 OUTPUT_DIR_CV <- "01-crossvalidation/"
 OUTPUT_DIR_ARFF <- "02-arff_files/"
@@ -69,10 +70,21 @@ for(ifold in 1:NUM_FOLDS)
 
 #### BI-DIRECTIONAL ENRICHMENT
 source("scripts/bdenrichment.r")
+resTLall<-list()
+AUCLall<-list()
+precLall<-list()
+sizeLall<-list()
 for(ifold in 1:NUM_FOLDS)
 {
-  bdenrichment(index = ifold, trainFile = OUTPUT_PREFIX_TRAIN_CV, testFile = OUTPUT_PREFIX_TEST_CV,
+  res <-  bdenrichment(index = ifold, trainFile = OUTPUT_PREFIX_TRAIN_CV, testFile = OUTPUT_PREFIX_TEST_CV,
                splitIndexes = splitIndexes, dataset = MATRIX, locOntologyFile = LOCATION_FILE,
                geneOntology = GENE_FILE, pandaPath = "scripts/panda",
                 bdParams = c(pvalGenes=0.05,pvalLocs=0.1,thresScoreGenes=1,thresScoreLocations=1))
+  
+  resTLall[[length(resTLall)+1]] <- res[["resTL"]]
+  AUCLall[[length(AUCLall)+1]] <- res[["AUCL"]]
+  precLall[[length(precLall)+1]] <- res[["precL"]]
+  sizeLall[[length(sizeLall)+1]] <- res[["sizeL"]]
+  
+  write(res[["AUCL"]][1], stdout())
 }
