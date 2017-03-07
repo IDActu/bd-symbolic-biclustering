@@ -19,7 +19,7 @@ genPandaInput<-function(TRAIN_FILE,INDEX){
   mm <- apply(m,1,function(x){if (sum(x)) colnames(m)[x==1]})
   fpanda <- paste("fimi_mat_",INDEX,".csv",sep="")
   fpanda_names <- paste("fimi_mat_",INDEX,"_names",".csv",sep="")
-  #file.remove(fpanda)
+  file.remove(fpanda)
   mm_notnull<-rmNullObs(mm)
   lapply(mm_notnull, write, fpanda, append=TRUE, ncolumns=1000)
   write.table(names(mm_notnull),fpanda_names,row.names=FALSE,col.names=FALSE,quote=FALSE)
@@ -115,7 +115,7 @@ annotData<-function(lib,flyids){
 
 # multiple calls to all biclusters
 # first define function that evaluates single bc
-runBcGOTest<-function(bc, fullflynames){
+runBcGOTest<-function(bc, fullflynames,fly2GO){
     bcList<-rep(0,length(fullflynames))
     bcList[fullflynames %in% bc[[2]]]<-1
     bcList<-factor(bcList)
@@ -177,7 +177,7 @@ aggScore<-function(gScores,gTList,tSubList){
 ## apply the bicluster description to test data
 # obtain all the genes from gList covered by the given (structured) list of terms
 # covered means that their aggregated score exceeds the threshold
-applyBicluster<-function(gList,tList,thres){
+applyBicluster<-function(gList,tList,thres,bcBP,bcMF,bcCC,keggOntInv){
   # change the structure of the term list 
   tListRef<-lapply(tList,decTList)
   # initialize gScores
@@ -204,7 +204,7 @@ runFTest<-function(myTerm,locs,myOnt){
     else return(fisher.test(fft,alternative="greater")$p.value)
 }
 
-runBcLocTest<-function(bc){
+runBcLocTest<-function(bc,locOnt,locInd,locTerms){
 # gets all the enriched location terms for the given set of locations (one element of bicluster)
     locs <- locInd$long[locInd$long %in% bc[[1]]]
     resFisherLoc <- sapply(locTerms,function(x) runFTest(x,locs,locOnt))
@@ -221,7 +221,7 @@ readLocOnt<-function(fname){
     locOnt <- lapply(locOnt, `[`, -1)
 }    
 
-runBcKEGGTest<-function(bc){
+runBcKEGGTest<-function(bc,keggOnt,keggTerms){
 # gets all the KEGG pathways for the given set of genes (one element of bicluster)
     genes <- names(keggOnt)[names(keggOnt) %in% bc[[2]]]
     resFisherLoc <- sapply(keggTerms,function(x) runFTest(x,genes,keggOnt))
@@ -244,7 +244,7 @@ aggScoreOnt<-function(locLists,tSubList,thres,myOnt){
 }
 
 # obtain all the locations that correspond to the given term at the given pval
-descBiclusterOnt<-function(sumResOnt,pval,thres){
+descBiclusterOnt<-function(sumResOnt,locOnt,pval,thres){
   # consruct location lists for the individual terms
   locLists<-sapply(rownames(sumResOnt),function(x) c(x,names(locOnt)[sapply(locOnt, function(y) x %in% y)]))
   # for each bicluster get the terms exceeding the pval threshold
@@ -257,7 +257,7 @@ descBiclusterOnt<-function(sumResOnt,pval,thres){
 }
 
 # obtain all the locations that correspond to the given term at the given pval
-descBiclusterKegg<-function(sumResKegg,pval,thres){
+descBiclusterKegg<-function(sumResKegg,keggOnt,pval,thres){
   # consruct location lists for the individual terms
   locLists<-sapply(rownames(sumResKegg),function(x) c(x,names(keggOnt)[sapply(keggOnt, function(y) x %in% y)]))
   # for each bicluster get the terms exceeding the pval threshold

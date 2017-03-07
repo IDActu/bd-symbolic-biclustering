@@ -1,0 +1,100 @@
+X1.8.somatic.cells X2.35.somatic.cells X3.36.somatic.cells X4.37.somatic.cells X5.38.somatic.cells 
+X1.9.germline.cells  
+X1.10.terminal.filament  X1.8.somatic.cells
+X1.11.cap.cells  X1.8.somatic.cells
+X1.12.escort.cells  X1.8.somatic.cells
+X1.13.follicle.stem.cells X1.14.follicle.cells X2.39.follicle.cells X3.40.follicle.cells X4.41.follicle.cells X5.42.follicle.cells X1.8.somatic.cells
+X1.14.follicle.cells X1.13.follicle.stem.cells X2.39.follicle.cells X3.40.follicle.cells X4.41.follicle.cells X5.42.follicle.cells 
+X1.15.interfollicular.stalk.cells X1.13.follicle.stem.cells X1.14.follicle.cells X2.43.interfollicular.stalk.cells X3.44.interfollicular.stalk.cells X4.45.interfollicular.stalk.cells X5.46.interfollicular.stalk.cells 
+X1.17.posterior.follicle.cells X1.14.follicle.cells X1.13.follicle.stem.cells 
+X1.18.germline.stem.cells X1.21.presumptive.oocyte X1.19.cystoblast X2.26.oocyte X3.27.oocyte X4.29.oocyte X5.30.oocyte X1.9.germline.cells
+X1.19.cystoblast X1.21.presumptive.oocyte X1.18.germline.stem.cells X2.26.oocyte X3.27.oocyte X4.29.oocyte X5.30.oocyte 
+X1.20.presumptive.nurse.cells X1.18.germline.stem.cells X1.19.cystoblast X2.31.nurse.cells X3.32.nurse.cells X4.33.nurse.cells X5.34.nurse.cells 
+X1.21.presumptive.oocyte X1.18.germline.stem.cells X1.19.cystoblast X2.26.oocyte X3.27.oocyte X4.29.oocyte X5.30.oocyte 
+X2.26.oocyte X1.21.presumptive.oocyte X1.18.germline.stem.cells X1.19.cystoblast X3.27.oocyte X4.29.oocyte X5.30.oocyte 
+X3.27.oocyte X1.21.presumptive.oocyte X1.18.germline.stem.cells X1.19.cystoblast X2.26.oocyte X4.29.oocyte X5.30.oocyte 
+X4.29.oocyte X1.21.presumptive.oocyte X1.18.germline.stem.cells X1.19.cystoblast X2.26.oocyte X3.27.oocyte X5.30.oocyte 
+X5.30.oocyte X1.21.presumptive.oocyte X1.18.germline.stem.cells X1.19.cystoblast X2.26.oocyte X3.27.oocyte X4.29.oocyte 
+X2.31.nurse.cells X1.20.presumptive.nurse.cells X1.18.germline.stem.cells X1.19.cystoblast X3.32.nurse.cells X4.33.nurse.cells X5.34.nurse.cells 
+X3.32.nurse.cells X1.20.presumptive.nurse.cells X1.18.germline.stem.cells X1.19.cystoblast X2.31.nurse.cells X4.33.nurse.cells X5.34.nurse.cells 
+X4.33.nurse.cells X1.20.presumptive.nurse.cells X1.18.germline.stem.cells X1.19.cystoblast X2.31.nurse.cells X3.32.nurse.cells X5.34.nurse.cells 
+X5.34.nurse.cells X1.20.presumptive.nurse.cells X1.18.germline.stem.cells X1.19.cystoblast X2.31.nurse.cells X3.32.nurse.cells X4.33.nurse.cells 
+X2.35.somatic.cells X1.8.somatic.cells X3.36.somatic.cells X4.37.somatic.cells X5.38.somatic.cells 
+X3.36.somatic.cells X1.8.somatic.cells X2.35.somatic.cells X4.37.somatic.cells X5.38.somatic.cells 
+X4.37.somatic.cells X1.8.somatic.cells X2.35.somatic.cells X3.36.somatic.cells X5.38.somatic.cells 
+X5.38.somatic.cells X1.8.somatic.cells X2.35.somatic.cells X3.36.somatic.cells X4.37.somatic.cells 
+X2.39.follicle.cells X1.13.follicle.stem.cells X1.14.follicle.cells X3.40.follicle.cells X4.41.follicle.cells X5.42.follicle.cells X2.35.somatic.cells
+X3.40.follicle.cells X1.13.follicle.stem.cells X1.14.follicle.cells X2.39.follicle.cells X4.41.follicle.cells X5.42.follicle.cells X3.36.somatic.cells
+X4.41.follicle.cells X1.13.follicle.stem.cells X1.14.follicle.cells X2.39.follicle.cells X3.40.follicle.cells X5.42.follicle.cells X4.37.somatic.cells
+X5.42.follicle.cells X1.13.follicle.stem.cells X1.14.follicle.cells X2.39.follicle.cells X3.40.follicle.cells X4.41.follicle.cells X5.38.somatic.cells
+X2.43.interfollicular.stalk.cells X1.15.interfollicular.stalk.cells X1.13.follicle.stem.cells X1.14.follicle.cells X3.44.interfollicular.stalk.cells X4.45.interfollicular.stalk.cells X5.46.interfollicular.stalk.cells X2.35.somatic.cells
+X3.44.interfollicular.stalk.cells X1.15.interfollicular.stalk.cells X1.13.follicle.stem.cells X1.14.follicle.cells X2.43.interfollicular.stalk.cells X4.45.interfollicular.stalk.cells X5.46.interfollicular.stalk.cells X3.36.somatic.cells
+X4.45.interfollicular.stalk.cells X1.15.interfollicular.stalk.cells X1.13.follicle.stem.cells X1.14.follicle.cells X2.43.interfollicular.stalk.cells X3.44.interfollicular.stalk.cells X5.46.interfollicular.stalk.cells X4.37.somatic.cells
+X5.46.interfollicular.stalk.cells X1.15.interfollicular.stalk.cells X1.13.follicle.stem.cells X1.14.follicle.cells X2.43.interfollicular.stalk.cells X3.44.interfollicular.stalk.cells X4.45.interfollicular.stalk.cells X5.38.somatic.cells
+X2.47.anterior.follicle.cells X1.13.follicle.stem.cells X1.14.follicle.cells X3.48.anterior.follicle.cells X4.49.border.cells X5.50.border.cells X2.39.follicle.cells X2.35.somatic.cells
+X3.48.anterior.follicle.cells X1.13.follicle.stem.cells X1.14.follicle.cells X2.47.anterior.follicle.cells X4.49.border.cells X5.50.border.cells X3.40.follicle.cells X3.36.somatic.cells
+X4.49.border.cells X1.13.follicle.stem.cells X1.14.follicle.cells X2.47.anterior.follicle.cells X3.48.anterior.follicle.cells X5.50.border.cells X4.41.follicle.cells X4.37.somatic.cells
+X5.50.border.cells X1.13.follicle.stem.cells X1.14.follicle.cells X2.47.anterior.follicle.cells X3.48.anterior.follicle.cells X4.49.border.cells X5.42.follicle.cells X5.38.somatic.cells
+X2.58.posterior.follicle.cells X3.59.posterior.follicle.cells X4.60.posterior.follicle.cells X5.61.posterior.follicle.cells X2.39.follicle.cells X2.35.somatic.cells
+X3.59.posterior.follicle.cells X2.58.posterior.follicle.cells X4.60.posterior.follicle.cells X5.61.posterior.follicle.cells 
+X4.60.posterior.follicle.cells X2.58.posterior.follicle.cells X3.59.posterior.follicle.cells X5.61.posterior.follicle.cells 
+X5.61.posterior.follicle.cells X2.58.posterior.follicle.cells X3.59.posterior.follicle.cells X4.60.posterior.follicle.cells 
+X5.62.centripetally.migrating.follicle.cells  X5.42.follicle.cells X5.38.somatic.cells
+X2.64.anterior.restriction X3.71.anterior.restriction X4.73.anterior.restriction X5.74.anterior.restriction X2.26.oocyte
+X2.65.posterior.restriction X3.75.posterior.restriction X4.76.posterior.restriction X5.77.posterior.restriction X2.26.oocyte
+X2.66.nurse.cells_nuclear.foci X3.82.nurse.cells_nuclear.foci X4.83.nurse.cells_nuclear.foci X5.84.nurse.cells_nuclear.foci X2.31.nurse.cells
+X2.67.nurse.cells_perinuclear X3.85.nurse.cells_perinuclear X4.86.nurse.cells_perinuclear X5.87.nurse.cells_perinuclear X2.31.nurse.cells
+X2.69.cytoplasmic.foci X3.111.cytoplasmic.foci X4.112.cytoplasmic.foci X5.113.cytoplasmic.foci X2.31.nurse.cells
+X2.70.apical.restriction X3.108.apical.restriction X4.109.apical.restriction X5.110.apical.restriction X2.39.follicle.cells X2.35.somatic.cells
+X3.71.anterior.restriction X2.64.anterior.restriction X4.73.anterior.restriction X5.74.anterior.restriction X3.27.oocyte
+X4.73.anterior.restriction X2.64.anterior.restriction X3.71.anterior.restriction X5.74.anterior.restriction X4.29.oocyte
+X5.74.anterior.restriction X2.64.anterior.restriction X3.71.anterior.restriction X4.73.anterior.restriction X5.30.oocyte
+X3.75.posterior.restriction X2.65.posterior.restriction X4.76.posterior.restriction X5.77.posterior.restriction X3.27.oocyte
+X4.76.posterior.restriction X2.65.posterior.restriction X3.75.posterior.restriction X5.77.posterior.restriction 
+X5.77.posterior.restriction X2.65.posterior.restriction X3.75.posterior.restriction X4.76.posterior.restriction X5.30.oocyte
+X4.80.cortical.enrichment X5.81.cortical.enrichment X4.29.oocyte
+X5.81.cortical.enrichment X4.80.cortical.enrichment X5.30.oocyte
+X3.82.nurse.cells_nuclear.foci X2.66.nurse.cells_nuclear.foci X4.83.nurse.cells_nuclear.foci X5.84.nurse.cells_nuclear.foci X3.32.nurse.cells
+X4.83.nurse.cells_nuclear.foci X2.66.nurse.cells_nuclear.foci X3.82.nurse.cells_nuclear.foci X5.84.nurse.cells_nuclear.foci X4.33.nurse.cells
+X5.84.nurse.cells_nuclear.foci X2.66.nurse.cells_nuclear.foci X3.82.nurse.cells_nuclear.foci X4.83.nurse.cells_nuclear.foci X5.34.nurse.cells
+X3.85.nurse.cells_perinuclear X2.67.nurse.cells_perinuclear X4.86.nurse.cells_perinuclear X5.87.nurse.cells_perinuclear X3.32.nurse.cells
+X4.86.nurse.cells_perinuclear X2.67.nurse.cells_perinuclear X3.85.nurse.cells_perinuclear X5.87.nurse.cells_perinuclear X4.33.nurse.cells
+X5.87.nurse.cells_perinuclear X2.67.nurse.cells_perinuclear X3.85.nurse.cells_perinuclear X4.86.nurse.cells_perinuclear X5.34.nurse.cells
+X3.105.basal.restrictrion X4.106.basal.restrictrion X5.107.basal.restrictrion X3.40.follicle.cells X3.36.somatic.cells
+X4.106.basal.restrictrion X3.105.basal.restrictrion X5.107.basal.restrictrion X4.41.follicle.cells X4.37.somatic.cells
+X5.107.basal.restrictrion X3.105.basal.restrictrion X4.106.basal.restrictrion X5.42.follicle.cells X5.38.somatic.cells
+X3.108.apical.restriction X2.70.apical.restriction X4.109.apical.restriction X5.110.apical.restriction X3.40.follicle.cells X3.36.somatic.cells
+X4.109.apical.restriction X2.70.apical.restriction X3.108.apical.restriction X5.110.apical.restriction X4.41.follicle.cells X4.37.somatic.cells
+X5.110.apical.restriction X2.70.apical.restriction X3.108.apical.restriction X4.109.apical.restriction X5.42.follicle.cells X5.38.somatic.cells
+X3.111.cytoplasmic.foci X2.69.cytoplasmic.foci X4.112.cytoplasmic.foci X5.113.cytoplasmic.foci X3.32.nurse.cells
+X4.112.cytoplasmic.foci X2.69.cytoplasmic.foci X3.111.cytoplasmic.foci X5.113.cytoplasmic.foci X4.33.nurse.cells
+X5.113.cytoplasmic.foci X2.69.cytoplasmic.foci X3.111.cytoplasmic.foci X4.112.cytoplasmic.foci X5.34.nurse.cells
+X2.114.cytoplasmic.foci X3.115.cytoplasmic.foci X4.116.cytoplasmic.foci X5.117.cytoplasmic.foci X2.39.follicle.cells X2.35.somatic.cells
+X3.115.cytoplasmic.foci X2.114.cytoplasmic.foci X4.116.cytoplasmic.foci X5.117.cytoplasmic.foci X3.40.follicle.cells X3.36.somatic.cells
+X4.116.cytoplasmic.foci X2.114.cytoplasmic.foci X3.115.cytoplasmic.foci X5.117.cytoplasmic.foci X4.41.follicle.cells X4.37.somatic.cells
+X5.117.cytoplasmic.foci X2.114.cytoplasmic.foci X3.115.cytoplasmic.foci X4.116.cytoplasmic.foci X5.42.follicle.cells X5.38.somatic.cells
+X2.118.cytoplasmic.foci X3.119.cytoplasmic.foci X4.120.cytoplasmic.foci X5.121.cytoplasmic.foci X2.26.oocyte
+X3.119.cytoplasmic.foci X2.118.cytoplasmic.foci X4.120.cytoplasmic.foci X5.121.cytoplasmic.foci X3.27.oocyte
+X4.120.cytoplasmic.foci X2.118.cytoplasmic.foci X3.119.cytoplasmic.foci X5.121.cytoplasmic.foci X4.29.oocyte
+X5.121.cytoplasmic.foci X2.118.cytoplasmic.foci X3.119.cytoplasmic.foci X4.120.cytoplasmic.foci X5.30.oocyte
+X2.128.nuclear.foci X3.129.nuclear.foci X4.130.nuclear.foci X5.131.nuclear.foci X2.39.follicle.cells X2.35.somatic.cells
+X3.129.nuclear.foci X2.128.nuclear.foci X4.130.nuclear.foci X5.131.nuclear.foci X3.40.follicle.cells X3.36.somatic.cells
+X4.130.nuclear.foci X2.128.nuclear.foci X3.129.nuclear.foci X5.131.nuclear.foci X4.41.follicle.cells X4.37.somatic.cells
+X5.131.nuclear.foci X2.128.nuclear.foci X3.129.nuclear.foci X4.130.nuclear.foci X5.42.follicle.cells X5.38.somatic.cells
+X4.139.anterior.follicle.cell X1.13.follicle.stem.cells X1.14.follicle.cells X2.47.anterior.follicle.cells X3.48.anterior.follicle.cells X4.41.follicle.cells X4.37.somatic.cells
+X5.140.squamous.follicle.cells  X5.42.follicle.cells X5.38.somatic.cells
+X3.142.cortical.enrichment X4.143.cortical.enrichment X5.144.cortical.enrichment X3.40.follicle.cells X3.36.somatic.cells
+X4.143.cortical.enrichment X3.142.cortical.enrichment X5.144.cortical.enrichment X4.41.follicle.cells X4.37.somatic.cells
+X5.144.cortical.enrichment X3.142.cortical.enrichment X4.143.cortical.enrichment X5.42.follicle.cells X5.38.somatic.cells
+X2.145.cortical.enrichment X3.146.cortical.enrichment X4.147.cortical.enrichment X5.148.cortical.enrichment X2.31.nurse.cells
+X3.146.cortical.enrichment X2.145.cortical.enrichment X4.147.cortical.enrichment X5.148.cortical.enrichment X3.32.nurse.cells
+X4.147.cortical.enrichment X2.145.cortical.enrichment X3.146.cortical.enrichment X5.148.cortical.enrichment X4.33.nurse.cells
+X5.148.cortical.enrichment X2.145.cortical.enrichment X3.146.cortical.enrichment X4.147.cortical.enrichment X5.34.nurse.cells
+X5.149.follicle.cells.overlaying.the.oocyte  X5.42.follicle.cells X5.38.somatic.cells
+X2.164.perinuclear X3.165.perinuclear X4.166.perinuclear X5.167.perinuclear X2.39.follicle.cells X2.35.somatic.cells
+X3.165.perinuclear X2.164.perinuclear X4.166.perinuclear X5.167.perinuclear X3.40.follicle.cells X3.36.somatic.cells
+X4.166.perinuclear X2.164.perinuclear X3.165.perinuclear X5.167.perinuclear X4.41.follicle.cells X4.37.somatic.cells
+X5.167.perinuclear X2.164.perinuclear X3.165.perinuclear X4.166.perinuclear X5.42.follicle.cells X5.38.somatic.cells
+X3.168.oocyte.nucleus X4.169.oocyte.nucleus X5.170.oocyte.nucleus X3.71.anterior.restriction X3.27.oocyte
+X4.169.oocyte.nucleus X3.168.oocyte.nucleus X5.170.oocyte.nucleus X4.73.anterior.restriction X4.29.oocyte
+X5.170.oocyte.nucleus X3.168.oocyte.nucleus X4.169.oocyte.nucleus X5.74.anterior.restriction X5.30.oocyte

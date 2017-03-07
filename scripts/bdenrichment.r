@@ -33,7 +33,6 @@ bdenrichment <- function(index = 1, trainFile, testFile, splitIndexes,
   locOnt<-readLocOnt(locOntologyFile)
   names(locOnt)<-gsub("#",".",names(locOnt)) # change the location names so that they match names read from matrix headers
   keggOnt<-readLocOnt(geneOntology)
-  locTerms <- unique(unlist(locOnt))
   keggTerms <- unique(unlist(keggOnt))
   keggOntInv<-lapply(keggTerms,function(x) names(keggOnt)[sapply(keggOnt,function(y) x %in% y)])
   names(keggOntInv)<-keggTerms
@@ -57,8 +56,8 @@ bdenrichment <- function(index = 1, trainFile, testFile, splitIndexes,
   x<-paste(pandaPath," -d ",fpanda," -o fimi_out_",index,".csv -y 0.3 -t 0.3",sep="")
   system(x)
   
-  trainRows<-unique(samples[[index]]$indexES_row_sample_TRAIN)
-  trainCols<-unique(samples[[index]]$indexES_col_sample_TRAIN)
+  trainRows<-unique(samples[[index]]$index_row)
+  trainCols<-unique(samples[[index]]$index_col)
   testA = read.csv(paste(testFile,index,".csv",sep=""), row.names = 1)
   testRows<-!(seq(dim(testA)[1]) %in% trainRows)
   testCols<-!(seq(dim(testA)[2]) %in% trainCols)
@@ -73,10 +72,10 @@ bdenrichment <- function(index = 1, trainFile, testFile, splitIndexes,
   bciSizes<-sapply(bci,function(x) paste(length(x[[1]]),length(x[[2]]),sep="x"))
   
   # analyze the gene direction
-  sumRes <- sapply(ntbc,runBcGOTest(bc, fullflynames))
+  sumRes <- sapply(ntbc,runBcGOTest,fullflynames=fullflynames,fly2GO=fly2GO)
   names(sumRes) <- paste(rep(seq(length(ntbc)),each=3),rep(c("BP","CC","MF"),length(ntbc)))
-  sumResOnt<-sapply(ntbc,runBcLocTest)
-  sumResKEGG<-sapply(ntbc,runBcKEGGTest)
+  sumResOnt<-sapply(ntbc,runBcLocTest,locOnt=locOnt,locInd=locInd,locTerms=unique(unlist(locOnt)))
+  sumResKEGG<-sapply(ntbc,runBcKEGGTest,keggOnt=keggOnt,keggTerms=keggTerms)
   
   ## CLASSIFICATION
   
@@ -84,7 +83,7 @@ bdenrichment <- function(index = 1, trainFile, testFile, splitIndexes,
   # take the full dataset and replace all the TRAIN entries by NAs
   testA[(rowSums(testA,na.rm=T)==sum(testCols) | rowSums(testA,na.rm=T)==ncol(testA)),] <- NA
   fullgnames<-rownames(testA)
-  names(testA) = sapply(names(testA),function(x) substr(x,2,nchar(x)))
+  #names(testA) = sapply(names(testA),function(x) substr(x,2,nchar(x)))
   
   # tests limited to specific test matrix subregions
   testG <- testA
@@ -96,9 +95,9 @@ bdenrichment <- function(index = 1, trainFile, testFile, splitIndexes,
   
   desc<-descBiclusters(sumRes,bdParams[["pvalGenes"]])
   desc<-keggBiclusters(desc,sumResKEGG,bdParams[["pvalGenes"]]) # extend desc with the KEGG part
-  iGenes<-lapply(desc,function(x){applyBicluster(fullflynames,x,bdParams[["thresScoreGenes"]])})
-  #iGenes<-descBiclusterKegg(sumResKEGG,bdParams[[pvalGenes]],thresScoreGenes) # independent KEGG test
-  iLocs<-descBiclusterOnt(sumResOnt,bdParams[["pvalLocs"]],bdParams[["thresScoreLocations"]])
+  iGenes<-lapply(desc,function(x){applyBicluster(fullflynames,x,bdParams[["thresScoreGenes"]],bcBP,bcMF,bcCC,keggOntInv)})
+  #iGenes<-descBiclusterKegg(sumResKEGG,keggOnt,bdParams[[pvalGenes]],thresScoreGenes) # independent KEGG test
+  iLocs<-descBiclusterOnt(sumResOnt,locOnt,bdParams[["pvalLocs"]],bdParams[["thresScoreLocations"]])
   # store the description size
   sizeL<-data.frame(goTerms=sapply(desc,function(x) sum(sapply(x,length))),locTerms=colSums(sumResOnt<bdParams[["pvalLocs"]]),genes=sapply(iGenes,length),locs=sapply(iLocs,length))
   pred<-testA
@@ -120,4 +119,5 @@ bdenrichment <- function(index = 1, trainFile, testFile, splitIndexes,
   prec<-resA[2,2]/(resA[2,2]+resA[2,1]) # precision
   AUCL<-c(all=myAUC4f(resA),gen2f=myAUC4f(res2f),keepgenes=myAUC4f(resG),keeplocations=myAUC4f(resS))
   resTL<-list(all=resA,gen2f=res2f,keepgenes=resG,keeplocations=resS)
+  return(list(prec=prec,AUCL=AUCL,resTL=resTL,sizeL=sizeL))
 }
