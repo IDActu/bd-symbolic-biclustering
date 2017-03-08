@@ -5,11 +5,19 @@ MEMGB <- 2  #memory allocated for JVM
 NUM_FOLDS <- 10 #number of folds
 MIN_COVER <- 500 #min term coverage on GO ontology
 
+#PATHs for the IDiscs dataset
 GENE_FILE <- "00-data/pathwayList"  #path to the row ontology file (kegg)
 LOCATION_FILE <- "00-data/columnOntology" #path to the column ontology file
 MATRIX <- "00-data/discMatrix.csv"  #original gene expression matrix
 GO_OBO <- "00-data/go-basic.obo"  #GO in obo format
 FBGN2GO <- "00-data/gene_association.fb"  #mapping FBgn to GO ID
+
+#PATHs for the OVARY dataset
+#GENE_FILE <- "00-data/pathwayList_ovary"  #path to the row ontology file (kegg)
+#LOCATION_FILE <- "00-data/columnOntology_ovary" #path to the column ontology file
+#MATRIX <- "00-data/matrix_ovary.csv"  #original gene expression matrix
+#GO_OBO <- "00-data/go-basic.obo"  #GO in obo format
+#FBGN2GO <- "00-data/gene_association.fb"  #mapping FBgn to GO ID
 
 OUTPUT_DIR_CV <- "01-crossvalidation/"
 OUTPUT_DIR_ARFF <- "02-arff_files/"
